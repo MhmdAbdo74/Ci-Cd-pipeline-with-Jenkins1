@@ -52,18 +52,17 @@ pipeline{
         stage('sonarqube analysis')
         {
             steps{
-                
                 script{
-                    withSonarQubeEnv(credentialsId: 'sonar-api') {
+                    withSonarQubeEnv(credentialsId: 'jenkins-sonar-token') {
                         sh 'mvn clean package sonar:sonar'
-             }
+                    }
                 }
-            }
+                
+            
         }
        
        
 
 }
 }
-
-
+}
