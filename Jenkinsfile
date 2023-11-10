@@ -4,7 +4,7 @@ pipeline{
     tools{
         
         maven 'maven'
-        sonarqube 'sonar'
+        soonar.SonarRunnerInstallationnarqube 'sonar'
     }
     
     stages {
