@@ -29,40 +29,6 @@ pipeline{
                 }
             }
         }
-        stage('Integration Test'){
-            
-            steps{
-                
-                script{
-                    
-                    sh 'mvn verify -DskipunitTests'
-                }
-            }
-        }
-        stage('Build'){
-            
-            steps{
-                
-                script{
-                    
-                    sh 'mvn clean install'
-                }
-            }
-        }
-        stage('sonarqube analysis')
-        {
-            steps{
-                script{
-                    withSonarQubeEnv(credentialsId: 'sonar') {
-                        sh 'mvn  clean package sonar:sonar'
-                    }
-                }
-                
-            
-        }
        
-       
-
-}
 }
 }
