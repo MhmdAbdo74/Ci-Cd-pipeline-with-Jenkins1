@@ -56,9 +56,14 @@ pipeline{
         stage('sonarqube analysis')
         {
             steps{
-                script{
-                    withSonarQubeEnv(credentialsId: 'sonar') {
-                        sh 'mvn   sonar:sonar'
+                
+                    withSonarQubeEnv( 'sonar') {
+                        sh '''$scannerHome/bin/sonar-scanner \
+                        -Dsonar.projectKey=sonarqube \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=http://localhost:9000 \
+                        -Dsonar.java.binaries=. \
+                        -Dsonar.projecKey=sonarqube '''
                     }
                 }
                 
@@ -69,4 +74,4 @@ pipeline{
 
 }
 }
-}
+
