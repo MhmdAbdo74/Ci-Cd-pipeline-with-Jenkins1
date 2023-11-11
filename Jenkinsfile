@@ -53,7 +53,7 @@ pipeline{
                 }
             }
         }
-        stage('sonarqube analysis')
+        stage('static analysis')
         {
             steps{
                 script{
