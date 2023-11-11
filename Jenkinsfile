@@ -53,12 +53,12 @@ pipeline{
                 }
             }
         }
-        stage('static analysis')
+        stage('sonarqube analysis')
         {
             steps{
                 script{
                     withSonarQubeEnv(credentialsId: 'sonar') {
-                        sh 'mvn sonar:sonar'
+                        sh 'mvn clean package  sonar:sonar'
                     }
                 }
                 
