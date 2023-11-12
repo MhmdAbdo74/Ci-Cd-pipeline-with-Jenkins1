@@ -94,7 +94,7 @@ pipeline{
                     ],
                             credentialsId: 'nexus-cred',
                             groupId: 'com.example',
-                            nexusUrl: '54.234.198.96:8081',
+                            nexusUrl: '44.206.244.192:8081',
                             nexusVersion: 'nexus3',
                             protocol: 'http',
                             repository: "${nexusrepo}",
